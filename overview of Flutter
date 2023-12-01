@@ -1,0 +1,35 @@
+Flutter is a UI toolkit developed by Google for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language.
+
+To get started with Flutter, you need to:
+
+Install Flutter: Download and install Flutter from the official Flutter website (https://flutter.dev/docs/get-started/install).
+
+Set up your editor: Use an IDE like Visual Studio Code or Android Studio with the Flutter and Dart plugins installed.
+
+Create a new Flutter project: Run the command flutter create project_name in your terminal to generate a new Flutter project.
+
+Write Dart code: Open the project in your chosen editor and start writing Dart code in the lib directory.
+
+Here's a simple example of a Flutter app:
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My Flutter App'),
+        ),
+        body: Center(
+          child: Text('Hello, Flutter!'),
+        ),
+      ),
+    );
+  }
+}
