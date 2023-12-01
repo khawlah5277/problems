@@ -1,0 +1,50 @@
+```dart
+class Counter extends StatefulWidget {
+  const Counter({Key? key}) : super(key: key);
+
+  @override
+  State<Counter> createState() => _CounterState();
+
+  class _CounterState extends State<Counter> {
+    int _count = 0;
+
+    @override
+    Widget build(BuildContext context) {
+      return Text('Count: $_count');
+    }
+  }
+
+}
+```
+Now, in order to change the counter, we need to call the *setState* function. *setState* is provided by the *State* class. It takes a function as a parameter, which changes the current state of the widget. In other words, the *setState* function notifies the framework that the state has changed, and that the framework should redraw the widget (i.e., call the *build* function). 
+The following code shows how to create a button that increments the counter by one when pressed.
+```dart
+class Counter extends StatefulWidget {
+  const Counter({Key? key}) : super(key: key);
+
+  @override
+  State<Counter> createState() => _CounterState();
+
+  class _CounterState extends State<Counter> {
+    int _count = 0;
+    void changeCount() {
+      setState(() {
+        _count++;
+      });
+    }
+    @override
+    Widget build(BuildContext context) {
+      return Column(
+        children: [
+          Text('Count: $_count'),
+          ElevatedButton(
+            onPressed: changeCount,
+            child: const Text('Increment'),
+          ),
+        ],
+      );
+    }
+  }
+
+}
+```
